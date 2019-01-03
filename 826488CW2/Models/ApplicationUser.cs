@@ -12,7 +12,5 @@ namespace _826488CW2.Models
     {
         [MinLength(2), MaxLength(60)]
         public string Name { get; set; }
-        //ToDo: Add data annotations
-        public  DateTime Birthdate { get; set; }
     }
 }
