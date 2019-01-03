@@ -24,5 +24,6 @@ namespace _826488CW2.Data
         }
 
         public DbSet<_826488CW2.Models.Post> Posts { get; set; }
+        
     }
 }
