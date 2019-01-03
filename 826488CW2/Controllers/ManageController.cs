@@ -69,6 +69,7 @@ namespace _826488CW2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Index(IndexViewModel model)
         {
             if (!ModelState.IsValid)
@@ -108,6 +109,7 @@ namespace _826488CW2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> SendVerificationEmail(IndexViewModel model)
         {
             if (!ModelState.IsValid)
@@ -131,6 +133,7 @@ namespace _826488CW2.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> ChangePassword()
         {
             var user = await _userManager.GetUserAsync(User);
