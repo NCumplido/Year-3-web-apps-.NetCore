@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using _826488CW2.Data;
 using _826488CW2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace _826488CW2.Controllers
 {
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _context;
