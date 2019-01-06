@@ -18,6 +18,7 @@ namespace _826488CW2.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
+    //[RequireHttps]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

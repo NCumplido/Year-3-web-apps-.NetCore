@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -39,8 +35,10 @@ namespace _826488CW2
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline. 
+                                                                                 //Dependancy injection here
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context/*,
+            UserManager<IdentityUser> userManager, UserManager<ApplicationUser> memberManager*/)
         {
             if (env.IsDevelopment())
             {
@@ -55,6 +53,8 @@ namespace _826488CW2
 
             app.UseStaticFiles();
 
+            app.UseIdentity();
+
             app.UseAuthentication();
 
             app.UseMvc(routes =>
@@ -64,7 +64,8 @@ namespace _826488CW2
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.UseIdentity();
+            //DbSeeder.SeedDb(context, userManager, memberManager);            
+
         }
     }
 }

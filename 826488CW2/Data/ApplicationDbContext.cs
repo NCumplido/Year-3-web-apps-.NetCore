@@ -28,5 +28,7 @@ namespace _826488CW2.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<_826488CW2.Models.Customer> Customers { get; set; }
     }
 }

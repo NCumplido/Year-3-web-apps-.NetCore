@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace _826488CW2.Controllers
 {
+    //[RequireHttps]
     public class HomeController : Controller
     {
-
         public IActionResult Index()
         {
             return View();
@@ -36,6 +36,11 @@ namespace _826488CW2.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Post()
+        {
+            return RedirectToAction("Index", "Posts");
         }
     }
 }
