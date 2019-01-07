@@ -25,6 +25,11 @@ namespace _826488CW2.Controllers
             return View(await _context.Customers.ToListAsync());
         }
 
+        public IActionResult Home()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -66,6 +71,7 @@ namespace _826488CW2.Controllers
         }
 
         // GET: Customers/Edit/5
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)

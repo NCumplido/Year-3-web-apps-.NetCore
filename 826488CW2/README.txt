@@ -9,5 +9,12 @@ Web Application Development CW2
 3, Comments:
 	
 	Seeding does not work, issue with IdentityUser
-	Annotations in Controllers: HTTPS tag prevents me from testing
-	Login issues
+	Annotations in Controllers: [RequireHttps] tag prevents me from testing
+
+	Upgraded to 2.0.9 to prevent vulnerability of denial of service warned from Github 
+	Please see: https://github.com/aspnet/Announcements/issues/311
+	<PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+
+	XSS Implementation needs to be completed, from output:
+	Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ValidateAntiforgeryTokenAuthorizationFilter:
+	Information: Antiforgery token validation failed. The required antiforgery header value "RequestVerificationToken" is not present.

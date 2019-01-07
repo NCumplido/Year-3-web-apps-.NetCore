@@ -27,6 +27,11 @@ namespace _826488CW2.Controllers
             return View(await _context.Posts.ToListAsync());
         }
 
+        public IActionResult Home()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         // GET: Posts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -46,6 +51,7 @@ namespace _826488CW2.Controllers
         }
 
         // GET: Posts/Create
+        //[ValidateAntiForgeryToken]
         public IActionResult Create()
         {
             return View();
@@ -55,7 +61,7 @@ namespace _826488CW2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Content")] Post post)
         {
             if (ModelState.IsValid)
@@ -68,6 +74,7 @@ namespace _826488CW2.Controllers
         }
 
         // GET: Posts/Edit/5
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,7 +94,7 @@ namespace _826488CW2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Content")] Post post)
         {
             if (id != post.Id)
@@ -138,7 +145,7 @@ namespace _826488CW2.Controllers
 
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var post = await _context.Posts.SingleOrDefaultAsync(m => m.Id == id);

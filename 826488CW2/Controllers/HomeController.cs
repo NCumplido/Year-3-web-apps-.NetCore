@@ -42,5 +42,10 @@ namespace _826488CW2.Controllers
         {
             return RedirectToAction("Index", "Posts");
         }
+
+        public IActionResult ViewCustomers()
+        {
+            return RedirectToAction("Index", "Customers");
+        }
     }
 }
