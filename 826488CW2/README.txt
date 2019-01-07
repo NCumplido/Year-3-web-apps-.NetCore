@@ -15,9 +15,11 @@ Web Application Development CW2
 	Please see: https://github.com/aspnet/Announcements/issues/311
 	<PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
 
-	XSS Implementation needs to be completed, from output:
+	Cross site forgery Implementation needs to be completed, from output:
 	Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ValidateAntiforgeryTokenAuthorizationFilter:
 	Information: Antiforgery token validation failed. The required antiforgery header value "RequestVerificationToken" is not present.
 
 	Need to link Comments to posts
 	Need implement a partial view to show comments with each post
+
+	XSS To be implemented:https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.2
