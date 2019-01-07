@@ -25,6 +25,11 @@ namespace _826488CW2.Controllers
             return View(await _context.Comments.ToListAsync());
         }
 
+        public IActionResult Home()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         // GET: Comments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
