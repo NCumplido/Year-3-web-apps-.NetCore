@@ -23,3 +23,4 @@ Web Application Development CW2
 	Need implement a partial view to show comments with each post
 
 	XSS To be implemented:https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.2
+	Or continue implementing Bind[] where necessary.
